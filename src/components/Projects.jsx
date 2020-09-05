@@ -6,7 +6,7 @@ export default class Projects extends Component {
     state = {
         projects: [
             {
-                title: "yongol.de",
+                title: "y-gol.de",
                 tags: ["Nodejs", "React"],
                 desc: "This website!",
                 link: "https://github.com/y-golde/yongol.de",

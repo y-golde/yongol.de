@@ -22,7 +22,7 @@ export default class NavBarTest extends Component {
         return (
             <div>
                 <Navbar className="nav navbar-expand-lg fixed-top" light>
-                    <NavbarBrand>Johnathan Golde</NavbarBrand>
+                    <NavbarBrand>Yonatan Golde</NavbarBrand>
                     <NavbarToggler
                         onClick={() => this.toggleNavbar()}
                         className="mr-2"
