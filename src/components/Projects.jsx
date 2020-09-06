@@ -1,6 +1,16 @@
 import React, { Component } from "react";
-import { Row, Card, Col, Button, CardTitle, CardText, Badge } from "reactstrap";
+import {
+    Row,
+    Card,
+    Col,
+    Button,
+    CardTitle,
+    CardText,
+    Badge,
+    ButtonGroup,
+} from "reactstrap";
 import Carousel from "react-multi-carousel";
+import { Link } from "react-router-dom";
 
 export default class Projects extends Component {
     state = {
@@ -10,6 +20,13 @@ export default class Projects extends Component {
                 tags: ["Nodejs", "React"],
                 desc: "This website!",
                 link: "https://github.com/y-golde/yongol.de",
+            },
+            {
+                title: "Doch One sender",
+                tags: ["Nodejs", "React"],
+                desc: "A service that sends doch-one every morning at 8 AM",
+                link: "https://github.com/y-golde/yongol.de",
+                href: "/doch",
             },
             {
                 title: "Food gambling reddit bot",
@@ -87,12 +104,22 @@ export default class Projects extends Component {
                                             })}
                                         </CardTitle>
                                         <CardText>{project.desc}</CardText>
-                                        <a
-                                            className="mt-auto btn btn-primary"
-                                            href={project.link}
-                                        >
-                                            To Github Repository
-                                        </a>
+                                        <ButtonGroup className="mt-auto">
+                                            <a
+                                                className="btn btn-prim"
+                                                href={project.link}
+                                            >
+                                                To Github Repository
+                                            </a>
+                                            {project.href && (
+                                                <Link
+                                                    to={project.href}
+                                                    className="btn btn-prim"
+                                                >
+                                                    To project!
+                                                </Link>
+                                            )}
+                                        </ButtonGroup>
                                     </Card>
                                 </Col>
                             </React.Fragment>

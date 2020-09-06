@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import NavBarTest from "./Nav.jsx";
-import Jumbo from "./Jumbo.jsx";
-import About from "./About.jsx";
-import Projects from "./Projects.jsx";
-import Contact from "./Contact.jsx";
+import NavBarTest from "../components/Nav.jsx";
+import Jumbo from "../components/Jumbo.jsx";
+import About from "../components/About.jsx";
+import Projects from "../components/Projects.jsx";
+import Contact from "../components/Contact.jsx";
+import { Link } from "react-router-dom";
 
-class App extends Component {
+export default class MainPage extends Component {
     state = {
         test: "TEST",
         navVisible: false,
@@ -23,7 +24,6 @@ class App extends Component {
             this.setState({ navVisible: false });
         }
     }
-
     render() {
         return (
             <div>
@@ -36,5 +36,3 @@ class App extends Component {
         );
     }
 }
-
-export default App;

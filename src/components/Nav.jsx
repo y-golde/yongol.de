@@ -30,13 +30,15 @@ export default class NavBarTest extends Component {
                     <Collapse isOpen={!collapsed} navbar>
                         <Nav navbar>
                             <NavItem>
-                                <NavLink href="#about">Work experience</NavLink>
+                                <NavLink href="/#about">
+                                    Work experience
+                                </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="#projects">Projects</NavLink>
+                                <NavLink href="/#projects">Projects</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="#contact">Contact Me</NavLink>
+                                <NavLink href="/#contact">Contact Me</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
