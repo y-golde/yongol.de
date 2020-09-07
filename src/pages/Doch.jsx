@@ -28,7 +28,7 @@ export default class Doch extends Component {
 
     test() {
         $.ajax({
-            url: "http://y-gol.de:1323/api/bruh",
+            url: "http://y-gol.de:1323/api/doch",
             type: "POST",
             headers: {
                 "Referrer-Policy": "origin",

@@ -19,7 +19,7 @@ func getUsers(c echo.Context) error {
 	return c.JSON(http.StatusOK, users)
 }
 
-func bruh(c echo.Context) error {
+func sendDoch(c echo.Context) error {
 	json_map := make(map[string]interface{})
 	err := json.NewDecoder(c.Request().Body).Decode(&json_map)
 	if err != nil {
@@ -63,7 +63,7 @@ func main() {
 	// }))
 
 	e.GET("/api/users", getUsers)
-	e.POST("/api/bruh", bruh)
+	e.POST("/api/doch", sendDoch)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }

@@ -33,6 +33,10 @@ export default class DochExplanation extends Component {
                     nickname: nickname,
                 }),
                 contentType: "application/json",
+                success: () => {
+                    this.setState({ isLoading: false });
+                    alert("נוספת! , תהנה בונבון");
+                },
             });
         }
     }
