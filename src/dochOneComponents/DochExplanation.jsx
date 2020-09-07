@@ -25,7 +25,7 @@ export default class DochExplanation extends Component {
                 isLoading: true,
             });
             $.ajax({
-                url: "https://y-gol.de:1323/api/bruh",
+                url: "/api/doch",
                 type: "POST",
                 dataType: "json",
                 data: JSON.stringify({
