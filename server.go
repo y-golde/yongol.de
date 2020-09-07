@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"net/http"
 	"os"
-
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 )
@@ -35,7 +34,7 @@ func sendDoch(c echo.Context) error {
 }
 
 func addRow(jsonmap []string) {
-	f, err := os.OpenFile("test.csv", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
+	f, err := os.OpenFile("/home/yonathan/projects/doch1/cookies.csv", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	if err != nil {
 		fmt.Println("Error: ", err)
 		return
@@ -47,6 +46,7 @@ func addRow(jsonmap []string) {
 
 func main() {
 	e := echo.New()
+	//e.AutoTLSManager.Cache = autocert.DirCache("/var/www/.cache")
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
