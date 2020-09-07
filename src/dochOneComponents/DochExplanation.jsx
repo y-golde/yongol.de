@@ -104,6 +104,12 @@ export default class DochExplanation extends Component {
                         <sup>בלי נדר</sup>
                     </li>
                 </ol>
+                <div class="doch-footer">
+                    יכולים גם להסתכל ב
+                    <a href="https://github.com/y-golde/doch1">ריפו</a> ולתת
+                    בסטאר או בפורק אם אתם לא מלשנים <br />
+                    <i>באש ובמים ביתר ירושלים</i>
+                </div>
             </div>
         );
     }
