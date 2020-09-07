@@ -12,10 +12,11 @@ export default class DochExplanation extends Component {
         const cookie = $("#cookie").val();
         const nickname = $("#nickname").val();
 
+        const cookieValidate = new RegExp(/^[^,][A-Za-z]+$/);
         const nickValidate = new RegExp(/^[a-zA-Z]+$/);
 
         //validate the cookie
-        if (cookie.length < 100) {
+        if (!cookieValidate.test(cookie)) {
             alert("שדה עוגייה לא ולידי");
         } else if (!nickValidate.test(nickname)) {
             //validate the nickname

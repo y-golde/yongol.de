@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 )
@@ -52,7 +53,7 @@ func main() {
 
 	// CORS default
 	// Allows requests from any origin wth GET, HEAD, PUT, POST or DELETE method.
-	e.Use(middleware.CORS())
+	//e.Use(middleware.CORS())
 
 	// CORS restricted
 	// Allows requests from any `https://labstack.com` or `https://labstack.net` origin
