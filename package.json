@@ -10,6 +10,7 @@
     "author": "johnatan golde",
     "license": "ISC",
     "dependencies": {
+        "jquery": "^3.5.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-multi-carousel": "^2.5.5",
