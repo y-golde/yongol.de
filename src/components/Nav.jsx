@@ -7,6 +7,10 @@ import {
     Nav,
     NavItem,
     NavLink,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
 } from "reactstrap";
 
 export default class NavBarTest extends Component {
@@ -30,16 +34,32 @@ export default class NavBarTest extends Component {
                     <Collapse isOpen={!collapsed} navbar>
                         <Nav navbar>
                             <NavItem>
-                                <NavLink href="/#about">
-                                    Work experience
+                                <NavLink href="/doch">
+                                    Doch one automator
                                 </NavLink>
                             </NavItem>
-                            <NavItem>
-                                <NavLink href="/#projects">Projects</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="/#contact">Contact Me</NavLink>
-                            </NavItem>
+                            <UncontrolledDropdown nav inNavbar>
+                                <DropdownToggle nav caret>
+                                    About
+                                </DropdownToggle>
+                                <DropdownMenu>
+                                    <DropdownItem>
+                                        <NavLink href="/#about">
+                                            Work experience
+                                        </NavLink>
+                                    </DropdownItem>
+                                    <DropdownItem>
+                                        <NavLink href="/#projects">
+                                            Projects
+                                        </NavLink>
+                                    </DropdownItem>
+                                    <DropdownItem>
+                                        <NavLink href="/#contact">
+                                            Contact Me
+                                        </NavLink>
+                                    </DropdownItem>
+                                </DropdownMenu>
+                            </UncontrolledDropdown>
                         </Nav>
                     </Collapse>
                 </Navbar>
