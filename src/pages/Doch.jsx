@@ -1,13 +1,34 @@
 import React, { Component } from "react";
 import NavBarTest from "../components/Nav.jsx";
-import { Button } from "reactstrap";
 import $ from "jquery";
+import DochJumbo from "../dochOneComponents/DochJumbo.jsx";
+
+import "../css/doch.scss";
+import DochExplanation from "../dochOneComponents/DochExplanation.jsx";
 
 export default class Doch extends Component {
+    state = {
+        test: "TEST",
+        navVisible: false,
+    };
+
+    componentDidMount() {
+        window.addEventListener("scroll", this.testHeight.bind(this), true);
+    }
+
+    testHeight() {
+        console.log(document.getElementById("jumbo").offsetHeight);
+        //if the windows scroll value is bigget than the jumbotron
+        if (window.scrollY > document.getElementById("jumbo").offsetHeight) {
+            this.setState({ navVisible: true });
+        } else {
+            this.setState({ navVisible: false });
+        }
+    }
+
     test() {
-        console.log("baaaa");
         $.ajax({
-            url: "http://localhost:1323/api/bruh",
+            url: "http://y-gol.de:1323/api/bruh",
             type: "POST",
             headers: {
                 "Referrer-Policy": "origin",
@@ -21,14 +42,21 @@ export default class Doch extends Component {
         });
     }
 
+    test2() {
+        $.ajax({
+            url: "http://y-gol.de:1323/api/users",
+        });
+    }
+
     render() {
         return (
-            <div>
-                <NavBarTest />
-                <Button className="mt-5" onClick={() => this.test()}>
-                    dssd
-                </Button>
-            </div>
+            <React.Fragment>
+                {this.state.navVisible && <NavBarTest />}
+                <div className="doch-wrapper">
+                    <DochJumbo />
+                    <DochExplanation />
+                </div>
+            </React.Fragment>
         );
     }
 }

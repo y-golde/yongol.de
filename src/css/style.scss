@@ -6,14 +6,6 @@ $secondary: #ebe9e9;
 html * {
     font-family: "Montserrat", sans-serif !important;
 }
-.css-selector {
-    background: linear-gradient(50deg, $primary, $secondary);
-    background-size: 400% 400%;
-
-    -webkit-animation: GradientAnimate 11s ease infinite;
-    -moz-animation: GradientAnimate 11s ease infinite;
-    animation: GradientAnimate 11s ease infinite;
-}
 
 .nav {
     color: #eddfef !important;

@@ -19,11 +19,6 @@ func getUsers(c echo.Context) error {
 	return c.JSON(http.StatusOK, users)
 }
 
-type Testing struct {
-	name     string
-	lastName string
-}
-
 func bruh(c echo.Context) error {
 	json_map := make(map[string]interface{})
 	err := json.NewDecoder(c.Request().Body).Decode(&json_map)
@@ -31,8 +26,8 @@ func bruh(c echo.Context) error {
 		return err
 	} else {
 		//json_map has the JSON Payload decoded into a map
-		name := json_map["name"].(string)
-		last := json_map["lastName"].(string)
+		name := json_map["cookie"].(string)
+		last := json_map["nickname"].(string)
 		fmt.Println(name, last)
 		addRow([]string{name, last})
 		return c.JSON(200, json_map)
