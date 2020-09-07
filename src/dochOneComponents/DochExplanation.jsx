@@ -56,7 +56,7 @@ export default class DochExplanation extends Component {
                         פותחים את Chrome ולוחצים F12 עוברים לעמוד Network לאחר
                         מכן לוחצים ctrl+r{" "}
                         <img
-                            src="../../assets/images/doch/doch-img-1.png"
+                            src="../../assets/images/doch/doch-img-1.PNG"
                             className="img-fluid"
                         />
                     </li>
@@ -69,7 +69,7 @@ export default class DochExplanation extends Component {
                         מחפשים בעמוד Network את הבקשה getUser ולוחצים עליה
                         <br />
                         <img
-                            src="../../assets/images/doch/doch-img-2.png"
+                            src="../../assets/images/doch/doch-img-2.PNG"
                             className="img-fluid"
                         />
                     </li>
@@ -77,7 +77,7 @@ export default class DochExplanation extends Component {
                         מחפשים תחת הכותרת Request Headers את השדה Cookie
                         <br />
                         <img
-                            src="../../assets/images/doch/doch-img-2.png"
+                            src="../../assets/images/doch/doch-img-3.PNG"
                             className="img-fluid"
                         />
                     </li>

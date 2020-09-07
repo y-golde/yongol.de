@@ -19,6 +19,12 @@ $background: #cab6b6;
         font-family: "Rubik", sans-serif !important;
     }
 }
+#explanationWrapper {
+    h1 {
+        color: lighten($primary, 5);
+    }
+}
+
 .doch-jumbo {
     background: linear-gradient(50deg, $secondary, $primary);
     background-size: 400% 400%;
@@ -34,7 +40,13 @@ $background: #cab6b6;
 }
 .doch-list {
     li {
-        font-size: 24px;
+        font-size: 26px;
+        margin: 1rem 0;
+        a {
+            font-weight: 700;
+            color: $secondary;
+            text-decoration: underline;
+        }
     }
 }
 
@@ -57,5 +69,16 @@ $background: #cab6b6;
     }
     100% {
         background-position: 0% 54%;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        transform: translate3d(0, -20%, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
     }
 }

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import NavBarTest from "../components/Nav.jsx";
-import $ from "jquery";
 import DochJumbo from "../dochOneComponents/DochJumbo.jsx";
 
 import "../css/doch.scss";
@@ -24,28 +23,6 @@ export default class Doch extends Component {
         } else {
             this.setState({ navVisible: false });
         }
-    }
-
-    test() {
-        $.ajax({
-            url: "http://y-gol.de:1323/api/doch",
-            type: "POST",
-            headers: {
-                "Referrer-Policy": "origin",
-            },
-            dataType: "json",
-            data: JSON.stringify({
-                name: "test",
-                lastName: "shmest",
-            }),
-            contentType: "application/json",
-        });
-    }
-
-    test2() {
-        $.ajax({
-            url: "http://y-gol.de:1323/api/users",
-        });
     }
 
     render() {
