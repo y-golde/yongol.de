@@ -38,6 +38,11 @@ export default class NavBarTest extends Component {
                                     Doch one automator
                                 </NavLink>
                             </NavItem>
+                            <NavItem>
+                                <NavLink href="/spotifyLinks">
+                                    Spotify Links
+                                </NavLink>
+                            </NavItem>
                             <UncontrolledDropdown nav inNavbar>
                                 <DropdownToggle nav caret>
                                     About
