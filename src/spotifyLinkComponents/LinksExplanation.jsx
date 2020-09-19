@@ -4,7 +4,7 @@ import io from "socket.io-client";
 import Select from "react-select";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-const socket = io("/api/links");
+const socket = io("");
 
 export default class LinksExplanation extends Component {
     constructor(props) {
@@ -158,11 +158,13 @@ export default class LinksExplanation extends Component {
                                 </div>
                                 <div>
                                     <div className="links-loading-details">
-                                        <img
-                                            className="links-loading-img"
-                                            src={currentlyLoading.image.url}
-                                            alt={currentlyLoading.name}
-                                        />
+                                        {currentlyLoading.image && (
+                                            <img
+                                                className="links-loading-img"
+                                                src={currentlyLoading.image.url}
+                                                alt={currentlyLoading.name}
+                                            />
+                                        )}
                                         <span>{currentlyLoading.name}</span>
                                     </div>
                                 </div>
