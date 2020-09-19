@@ -34,9 +34,11 @@ export default class LinksExplanation extends Component {
         });
 
         socket.on("currentlyLoading", (artistId, image) => {
-            this.setState({
-                currentlyLoading: { name: artistId, image: image },
-            });
+            if (artistId) {
+                this.setState({
+                    currentlyLoading: { name: artistId, image: image },
+                });
+            }
         });
 
         socket.on("getFullStack", (stack) => {
@@ -45,6 +47,12 @@ export default class LinksExplanation extends Component {
                 finalPath: stack,
             });
             console.log(stack);
+        });
+
+        socket.on("giveUp", () => {
+            alert(
+                "i gave up! :( , the path is probadly too long , please try another link"
+            );
         });
     }
     searchFrom(test) {
