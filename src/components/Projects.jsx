@@ -23,10 +23,18 @@ export default class Projects extends Component {
             },
             {
                 title: "Doch One sender",
-                tags: ["Nodejs", "React"],
+                tags: ["Nodejs", "React", "golang"],
                 desc: "A service that sends doch-one every morning at 8 AM",
                 link: "https://github.com/y-golde/yongol.de",
                 href: "/doch",
+            },
+            {
+                title: "Spotify Link Finder",
+                tags: ["Nodejs", "React"],
+                desc:
+                    "An application that finds the shortest path from one artist to another using A* search",
+                link: "https://github.com/y-golde/spotifyLinker",
+                href: "/spotifyLinks",
             },
             {
                 title: "Food gambling reddit bot",
