@@ -51,7 +51,7 @@ export default class LinksExplanation extends Component {
 
         socket.on("giveUp", () => {
             alert(
-                "i gave up! :( , the path is probadly too long , please try another link"
+                "i gave up! :( , the path is probably too long , please try another link"
             );
         });
     }
@@ -169,7 +169,7 @@ export default class LinksExplanation extends Component {
                                         {currentlyLoading.image && (
                                             <img
                                                 className="links-loading-img"
-                                                src={currentlyLoading.image.url}
+                                                src={currentlyLoading.image}
                                                 alt={currentlyLoading.name}
                                             />
                                         )}
