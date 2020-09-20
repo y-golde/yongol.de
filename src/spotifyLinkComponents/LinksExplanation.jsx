@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Badge } from "reactstrap";
+import { Row, Col, Badge, Progress } from "reactstrap";
 import io from "socket.io-client";
 import Select from "react-select";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -33,10 +33,14 @@ export default class LinksExplanation extends Component {
             this.setState({ toSearchLoading: false, searchTo: artists });
         });
 
-        socket.on("currentlyLoading", (artistId, image) => {
+        socket.on("currentlyLoading", (artistId, image, depth) => {
             if (artistId) {
                 this.setState({
-                    currentlyLoading: { name: artistId, image: image },
+                    currentlyLoading: {
+                        name: artistId,
+                        image: image,
+                        depth: depth,
+                    },
                 });
             }
         });
@@ -116,6 +120,7 @@ export default class LinksExplanation extends Component {
             currentlyLoading,
             finalPath,
         } = this.state;
+        //console.log(currentlyLoading);
         return (
             <div>
                 <div className="links-header display-3"> How? </div>
@@ -174,6 +179,25 @@ export default class LinksExplanation extends Component {
                                             />
                                         )}
                                         <span>{currentlyLoading.name}</span>
+                                    </div>
+                                    <div className="links-progress">
+                                        <Progress
+                                            animated
+                                            color="info"
+                                            value={
+                                                (currentlyLoading.depth / 6) *
+                                                100
+                                            }
+                                        >
+                                            {Math.round(
+                                                (currentlyLoading.depth / 6) *
+                                                    100
+                                            ) + "%"}
+                                        </Progress>
+                                        <div className="text-center links-progress-desc">
+                                            The progress bar indicates how close
+                                            I am to giving up
+                                        </div>
                                     </div>
                                 </div>
                             </div>

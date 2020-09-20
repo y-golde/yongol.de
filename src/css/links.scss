@@ -46,7 +46,7 @@ $white: #fff;
     background-color: $green;
     color: $white;
 
-    padding: 1rem;
+    padding: 3rem;
     margin: 1rem 0;
 }
 
@@ -62,6 +62,20 @@ $white: #fff;
 .links-loading {
     color: $black;
     margin-left: 1rem;
+}
+
+.links-progress {
+    height: 2rem;
+    margin-top: 1rem;
+    .progress {
+        height: 2rem !important;
+        font-size: 24px;
+    }
+}
+
+.links-progress-desc {
+    font-size: 16px;
+    color: darken($white, 5);
 }
 
 .links-loading-details {
