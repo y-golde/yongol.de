@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import Doch from "./pages/Doch";
-import SpotifyLinks from "./spotifyLinkComponents/SpotifyLinks";
+import SpotifyLinks from "./pages/SpotifyLinks";
 
 class App extends Component {
     render() {
