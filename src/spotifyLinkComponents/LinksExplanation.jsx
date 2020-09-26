@@ -4,7 +4,7 @@ import io from "socket.io-client";
 import Select from "react-select";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-const socket = io();
+const socket = io(":3000");
 
 export default class LinksExplanation extends Component {
     constructor(props) {
@@ -33,17 +33,23 @@ export default class LinksExplanation extends Component {
             this.setState({ toSearchLoading: false, searchTo: artists });
         });
 
-        socket.on("currentlyLoading", (artistId, image, depth) => {
-            if (artistId) {
-                this.setState({
-                    currentlyLoading: {
-                        name: artistId,
-                        image: image,
-                        depth: depth,
-                    },
-                });
+        socket.on(
+            "currentlyLoading",
+            (artistId, image, depth, cached, nonCached) => {
+                console.log(cached, nonCached);
+                if (artistId) {
+                    this.setState({
+                        currentlyLoading: {
+                            name: artistId,
+                            image: image,
+                            depth: depth,
+                            cached: cached,
+                            nonCached: nonCached,
+                        },
+                    });
+                }
             }
-        });
+        );
 
         socket.on("getFullStack", (stack) => {
             this.setState({
@@ -185,20 +191,30 @@ export default class LinksExplanation extends Component {
                                             animated
                                             color="info"
                                             value={
-                                                (currentlyLoading.depth / 6) *
+                                                (currentlyLoading.depth / 5) *
                                                 100
                                             }
                                         >
                                             {Math.round(
-                                                (currentlyLoading.depth / 6) *
+                                                (currentlyLoading.depth / 5) *
                                                     100
                                             ) + "%"}
                                         </Progress>
-                                        <div className="text-center links-progress-desc">
-                                            The progress bar indicates how close
-                                            I am to giving up
-                                        </div>
                                     </div>
+                                    <div className="text-center links-progress-desc">
+                                        The progress bar indicates how close I
+                                        am to giving up
+                                    </div>
+                                </div>
+                                <div className="text-center">
+                                    <span>
+                                        {"Searched " +
+                                            (currentlyLoading.cached +
+                                                currentlyLoading.nonCached) +
+                                            " artists, " +
+                                            currentlyLoading.cached +
+                                            " of which were cached"}
+                                    </span>
                                 </div>
                             </div>
                         </div>
