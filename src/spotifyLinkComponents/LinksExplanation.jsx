@@ -4,7 +4,7 @@ import io from "socket.io-client";
 import Select from "react-select";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-const socket = io(":3000");
+const socket = io();
 
 export default class LinksExplanation extends Component {
     constructor(props) {
